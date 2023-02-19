@@ -5,9 +5,9 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+@app.get("/callback")
+def read_root(contextobj, senderobj, messageobj):
+    return {"Hello": messageobj}
 
 
 @app.get("/items/{item_id}")
